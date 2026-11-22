@@ -2,7 +2,7 @@
 
 **Think Twice Before You Copy: An Adaptive Browser Extension for Teaching Generative AI Literacy**
 
-TRACE (*Teaching Reflection via an Adaptive Cognitive Extension*) helps students engage more deliberately with generative AI. When a student attempts to copy AI-generated text, the extension considers the task and interaction context and, when appropriate, offers a short **Teach–Apply–Feedback** activity. The goal is not to police AI use, but to help students preserve opportunities to reason, verify, and explain in their own words.
+TRACE (*Teaching Reflection via an Adaptive Cognitive Extension*) is a browser extension that helps students engage more critically with generative AI. When students attempt to copy AI-generated text, TRACE evaluates the task and context to determine whether an intervention would be useful. Instead of treating all AI use the same way, it distinguishes between tasks like looking up a fact and generating an entire essay. When reflection is warranted, TRACE introduces a brief **Teach–Apply–Feedback** activity, asking students to verify a claim, explain a concept in their own words, or reconstruct the reasoning behind an answer.
 
 This repository accompanies our paper accepted to **EAAI 2027** and brings together the supplementary methods, study materials, code, and analyses.
 
