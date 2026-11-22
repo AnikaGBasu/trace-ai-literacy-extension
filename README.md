@@ -1,20 +1,33 @@
-# TRACE supplementary materials
+# TRACE
 
-Companion to **Think Twice Before You Copy: An Adaptive Browser Extension for Teaching Generative AI Literacy**.
+**Think Twice Before You Copy: An Adaptive Browser Extension for Teaching Generative AI Literacy**
 
-The complete reading copies are `Supplementary_Materials.pdf` and `Supplementary_Materials.docx`. The three task packets and practice activity also have separate printable PDFs. `TRACE_code_and_data.zip` contains the standalone code and data package.
+TRACE (*Teaching Reflection via an Adaptive Cognitive Extension*) helps students engage more deliberately with generative AI. When a student attempts to copy AI-generated text, the extension considers the task and interaction context and, when appropriate, offers a short **Teach–Apply–Feedback** activity. The goal is not to police AI use, but to help students preserve opportunities to reason, verify, and explain in their own words.
 
-| Folder | Contents |
-| --- | --- |
-| 01_model_and_inference | Model identifier, API settings, defaults, input limits, timeouts, and fallback behavior |
-| 02_complete_prompts | Complete browser and reference prompts, JSON schemas, request construction, and regeneration rules |
-| 03_taxonomy_and_prompt_bank | All task definitions and mappings, complete templates, release versions, and example interventions |
-| 04_risk_score | Formula, feature cutoffs, risk thresholds, reading-rate assumption, and worked examples |
-| 05_evaluation_rubrics | Reference scoring rubrics, answer keys, examples for each score, and condition blinding |
-| 06_study_materials | Reference recruitment and instructions, presurvey, practice, three task sets, verification claims, surveys, and reflections |
-| 07_validation | Reported agreement totals and annotator roles; reference annotation procedure and worksheets |
-| 08_statistical_results | Numerical Tables 2 and 3, descriptive statistics, full task tests, effect sizes, confidence intervals, and exploratory checks |
-| 09_ethics_and_privacy | Consent interaction, participant-information template, data collection, and anonymization |
-| 10_code_and_data | Browser source, prompts, taxonomy, analysis and figure scripts, pinned dependencies, task outcome data, and reproduction instructions |
+This repository accompanies our paper accepted to **EAAI 2027** and brings together the supplementary methods, study materials, code, and analyses.
 
-Intervention-response engagement uses **0, 1, or 2**. Memory and transfer use 0–4; own-words processing uses 0–3; verification recognition and incorrect-claim detection are binary; verification quality uses 0–2. Participant confidence, annoyance, and post-trial ratings use 1–5.
+## Start here
+
+- **[Supplementary materials (PDF)](Supplementary_Materials.pdf)** — Full methodological and technical documentation. Also available as an [editable Word file](Supplementary_Materials.docx).
+- **[Code and data package (ZIP)](TRACE_code_and_data.zip)** — Standalone archive with source files, analysis scripts, data, and reproduction resources.
+- **[Study materials](06_study_materials/)** — Participant instructions, practice activity, three task sets, and surveys.
+
+## Explore the repository
+
+**System design**  
+[Model and inference](01_model_and_inference/) · [Prompts and schemas](02_complete_prompts/) · [Task taxonomy and prompt bank](03_taxonomy_and_prompt_bank/) · [Risk scoring](04_risk_score/)
+
+**Study and evaluation**  
+[Scoring rubrics](05_evaluation_rubrics/) · [Study materials](06_study_materials/) · [Validation](07_validation/) · [Statistical results](08_statistical_results/) · [Ethics and privacy](09_ethics_and_privacy/)
+
+**Reproducibility**  
+[Source code, data, dependencies, and instructions](10_code_and_data/) · [Download complete package](TRACE_code_and_data.zip)
+
+## Study at a glance
+
+In a counterbalanced pilot, **35 high-school students** used unmodified ChatGPT, an always-on reflection condition, and adaptive TRACE. We examined immediate learning, verification, and usability. Results suggest potential benefits from selective, task-specific reflection, alongside trade-offs from added interruption. Longer-term learning and real-world adoption remain open questions.
+
+## Authors
+
+**Anika Ghosh Basu** and **Axel Szolusha**  
+The Harker School · San Jose, California, USA
