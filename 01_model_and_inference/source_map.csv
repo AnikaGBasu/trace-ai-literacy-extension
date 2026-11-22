@@ -1,0 +1,20 @@
+file,symbol_or_setting,line
+background.js,async function callBackend,98
+background.js,async function callOpenAI,119
+classifier.js,const SYSTEM_PROMPT,4
+classifier.js,const TASK_BYPASS_SCORE,95
+classifier.js,function estimateReadingTimeSeconds,195
+classifier.js,function computeOffloadingRisk,267
+classifier.js,async function classifyCopyEvent,370
+contentScript.js,const MAX_CLASSIFICATION_TEXT,4
+contentScript.js,const MAX_AI_EXCERPT,5
+contentScript.js,const CLASSIFIER_TIMEOUT_MS,6
+contentScript.js,const EVALUATOR_TIMEOUT_MS,7
+contentScript.js,function timeoutEvaluation,448
+contentScript.js,async function logStudyEvent,635
+responseEvaluator.js,const SYSTEM_PROMPT,4
+responseEvaluator.js,function clampScore,28
+responseEvaluator.js,function fallbackEvaluation,36
+storage.js,const DEFAULT_SETTINGS,8
+storage.js,async function appendStudyLog,106
+unlockPolicy.js,function decide,23

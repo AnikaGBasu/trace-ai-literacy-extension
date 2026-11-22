@@ -1,0 +1,85 @@
+{
+  "version": "task-routes-1.0.0",
+  "routes": {
+    "explanation": {
+      "student_goal": "understand_concept",
+      "cognitive_process": "comprehension",
+      "intervention_family": "active_recall",
+      "cognitive_risk": "passive comprehension"
+    },
+    "factual_lookup": {
+      "student_goal": "verify_claim",
+      "cognitive_process": "evidence_checking",
+      "intervention_family": "verification",
+      "cognitive_risk": "hallucination risk"
+    },
+    "writing_generation": {
+      "student_goal": "compose_own_response",
+      "cognitive_process": "authorship",
+      "intervention_family": "authorship_reflection",
+      "cognitive_risk": "authorship loss"
+    },
+    "revision": {
+      "student_goal": "keep_own_voice",
+      "cognitive_process": "comparison",
+      "intervention_family": "revision_comparison",
+      "cognitive_risk": "loss of voice"
+    },
+    "problem_solving": {
+      "student_goal": "reconstruct_reasoning",
+      "cognitive_process": "step_tracking",
+      "intervention_family": "step_reconstruction",
+      "cognitive_risk": "reasoning bypass"
+    },
+    "coding_help": {
+      "student_goal": "understand_bug",
+      "cognitive_process": "debugging",
+      "intervention_family": "error_explanation",
+      "cognitive_risk": "debugging bypass"
+    },
+    "summarization": {
+      "student_goal": "identify_main_idea",
+      "cognitive_process": "synthesis",
+      "intervention_family": "main_idea_recall",
+      "cognitive_risk": "shallow synthesis"
+    },
+    "brainstorming": {
+      "student_goal": "evaluate_options",
+      "cognitive_process": "selection",
+      "intervention_family": "selection_rationale",
+      "cognitive_risk": "passive idea acceptance"
+    },
+    "argumentation": {
+      "student_goal": "weigh_evidence",
+      "cognitive_process": "argument_evaluation",
+      "intervention_family": "counterargument",
+      "cognitive_risk": "one-sided reasoning"
+    },
+    "translation": {
+      "student_goal": "understand_meaning",
+      "cognitive_process": "language_analysis",
+      "intervention_family": "meaning_grammar_check",
+      "cognitive_risk": "language-learning bypass"
+    },
+    "unknown": {
+      "student_goal": "reflect_on_use",
+      "cognitive_process": "responsible_use",
+      "intervention_family": "general_reflection",
+      "cognitive_risk": "general overreliance"
+    }
+  },
+  "bypass_scores": {
+    "factual_lookup": 0,
+    "explanation": 1,
+    "revision": 1,
+    "summarization": 1,
+    "brainstorming": 1,
+    "translation": 1,
+    "unknown": 1,
+    "writing_generation": 2,
+    "problem_solving": 2,
+    "argumentation": 2,
+    "coding_help": 1,
+    "default": 1
+  }
+}

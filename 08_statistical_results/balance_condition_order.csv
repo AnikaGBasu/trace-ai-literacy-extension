@@ -1,0 +1,7 @@
+condition_order,generic_extension,normal_chatgpt,personalized_extension
+generic_normal_personalized,6,6,6
+generic_personalized_normal,6,6,6
+normal_generic_personalized,6,6,6
+normal_personalized_generic,6,6,6
+personalized_generic_normal,5,5,5
+personalized_normal_generic,6,6,6

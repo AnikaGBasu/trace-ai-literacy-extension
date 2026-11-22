@@ -1,0 +1,137 @@
+{
+  "version": "taxonomy-1.0.0",
+  "tasks": [
+    {
+      "task_type": "explanation",
+      "definition": "Understand a concept, process, or relationship.",
+      "example_request": "Explain why neurons fire.",
+      "boundary": "A single factual date is factual_lookup.",
+      "paper_process_at_risk": "Active comprehension",
+      "student_goal": "understand_concept",
+      "cognitive_process": "comprehension",
+      "intervention_family": "active_recall",
+      "cognitive_risk": "passive comprehension",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "factual_lookup",
+      "definition": "Retrieve a discrete fact, date, number, or short factual answer.",
+      "example_request": "What year did this event occur?",
+      "boundary": "Why/how a mechanism works is explanation.",
+      "paper_process_at_risk": "Epistemic evaluation",
+      "student_goal": "verify_claim",
+      "cognitive_process": "evidence_checking",
+      "intervention_family": "verification",
+      "cognitive_risk": "hallucination risk",
+      "bypass_score": 0
+    },
+    {
+      "task_type": "writing_generation",
+      "definition": "Compose new prose for a deliverable.",
+      "example_request": "Draft an introduction to my essay.",
+      "boundary": "Editing a supplied draft is revision.",
+      "paper_process_at_risk": "Authorship and original generation",
+      "student_goal": "compose_own_response",
+      "cognitive_process": "authorship",
+      "intervention_family": "authorship_reflection",
+      "cognitive_risk": "authorship loss",
+      "bypass_score": 2
+    },
+    {
+      "task_type": "revision",
+      "definition": "Modify existing writing for meaning, voice, clarity, or structure.",
+      "example_request": "Make this paragraph clearer.",
+      "boundary": "Creating prose without a draft is writing_generation.",
+      "paper_process_at_risk": "Authorial intent and voice",
+      "student_goal": "keep_own_voice",
+      "cognitive_process": "comparison",
+      "intervention_family": "revision_comparison",
+      "cognitive_risk": "loss of voice",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "problem_solving",
+      "definition": "Solve a specific mathematical, scientific, logical, or multistep problem.",
+      "example_request": "Solve 3x + 4 = 19 and explain each step.",
+      "boundary": "Explaining the concept of an equation is explanation.",
+      "paper_process_at_risk": "Multi-step reasoning",
+      "student_goal": "reconstruct_reasoning",
+      "cognitive_process": "step_tracking",
+      "intervention_family": "step_reconstruction",
+      "cognitive_risk": "reasoning bypass",
+      "bypass_score": 2
+    },
+    {
+      "task_type": "coding_help",
+      "definition": "Write, debug, explain, or repair code.",
+      "example_request": "Why does this loop skip the last item?",
+      "boundary": "A conceptual explanation with no code focus can be explanation.",
+      "paper_process_at_risk": "Debugging and causal reasoning",
+      "student_goal": "understand_bug",
+      "cognitive_process": "debugging",
+      "intervention_family": "error_explanation",
+      "cognitive_risk": "debugging bypass",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "summarization",
+      "definition": "Condense or synthesize provided source material.",
+      "example_request": "Summarize the main ideas of this passage.",
+      "boundary": "Writing a new passage is writing_generation.",
+      "paper_process_at_risk": "Selection and synthesis",
+      "student_goal": "identify_main_idea",
+      "cognitive_process": "synthesis",
+      "intervention_family": "main_idea_recall",
+      "cognitive_risk": "shallow synthesis",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "brainstorming",
+      "definition": "Generate candidate ideas, options, or plans for selection.",
+      "example_request": "Suggest three possible project topics.",
+      "boundary": "Developing reasons for one claim is argumentation.",
+      "paper_process_at_risk": "Idea evaluation and selection",
+      "student_goal": "evaluate_options",
+      "cognitive_process": "selection",
+      "intervention_family": "selection_rationale",
+      "cognitive_risk": "passive idea acceptance",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "argumentation",
+      "definition": "Develop or evaluate claims using reasons, evidence, or opposing perspectives.",
+      "example_request": "Give the strongest objection to this argument.",
+      "boundary": "Listing possible topics alone is brainstorming.",
+      "paper_process_at_risk": "Evidence weighing",
+      "student_goal": "weigh_evidence",
+      "cognitive_process": "argument_evaluation",
+      "intervention_family": "counterargument",
+      "cognitive_risk": "one-sided reasoning",
+      "bypass_score": 2
+    },
+    {
+      "task_type": "translation",
+      "definition": "Translate or examine meaning, grammar, or tone across languages/in language learning.",
+      "example_request": "Translate this sentence and explain the verb form.",
+      "boundary": "Same-language prose polishing is revision.",
+      "paper_process_at_risk": "Linguistic processing",
+      "student_goal": "understand_meaning",
+      "cognitive_process": "language_analysis",
+      "intervention_family": "meaning_grammar_check",
+      "cognitive_risk": "language-learning bypass",
+      "bypass_score": 1
+    },
+    {
+      "task_type": "unknown",
+      "definition": "Task goal cannot be determined from available context.",
+      "example_request": "An isolated selected phrase without a task goal.",
+      "boundary": "Do not force a label merely from the subject.",
+      "paper_process_at_risk": "Undetermined",
+      "student_goal": "reflect_on_use",
+      "cognitive_process": "responsible_use",
+      "intervention_family": "general_reflection",
+      "cognitive_risk": "general overreliance",
+      "bypass_score": 1
+    }
+  ]
+}

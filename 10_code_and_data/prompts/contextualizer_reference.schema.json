@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intervention_family",
+    "required_action",
+    "response_format",
+    "unlock_criterion",
+    "teach",
+    "apply",
+    "followup",
+    "high_extra"
+  ],
+  "properties": {
+    "intervention_family": {
+      "type": "string",
+      "enum": [
+        "active_recall",
+        "verification",
+        "authorship_reflection",
+        "revision_comparison",
+        "step_reconstruction",
+        "error_explanation",
+        "main_idea_recall",
+        "selection_rationale",
+        "counterargument",
+        "meaning_grammar_check",
+        "general_reflection"
+      ]
+    },
+    "required_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_format": {
+      "type": "string",
+      "enum": [
+        "short_open_text",
+        "single_choice"
+      ]
+    },
+    "unlock_criterion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "teach": {
+      "type": "string",
+      "minLength": 1
+    },
+    "apply": {
+      "type": "string",
+      "minLength": 1
+    },
+    "followup": {
+      "type": "string",
+      "minLength": 1
+    },
+    "high_extra": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,23 @@
+file,field,type,values_or_units,description,missingness
+task_outcomes.csv,participant_id,string,P01–P35,Participant pseudonym and pairing key.,none
+task_outcomes.csv,task_id,string,T001–T105,Unique participant-task observation ID.,none
+task_outcomes.csv,condition,category,normal_chatgpt; generic_extension; personalized_extension,Experimental interface condition.,none
+task_outcomes.csv,condition_order,category,six permutations of normal/generic/personalized joined with underscores,Participant-level assigned condition sequence.,none
+task_outcomes.csv,task_order,integer,1–3,Position of the task in that participant's sequence.,none
+task_outcomes.csv,task_set,category,A; B; C,Experimental set label: A action potentials; B collaborative filtering; C confirmation bias.,none
+task_outcomes.csv,memory_explanation_score,integer,0–4,Unaided memory/explanation score.,none
+task_outcomes.csv,own_words_score,integer,0–3,Independent own-words processing score for the explanation.,none
+task_outcomes.csv,transfer_score,integer,0–4,Unaided novel-scenario application outcome.,none
+task_outcomes.csv,verification_needed_identified,binary integer,0 no; 1 yes,Recognition of need to verify; separate from plan quality and incorrect-claim detection.,none
+task_outcomes.csv,verification_quality_score,integer,0–2,Quality of the verification plan.,none
+task_outcomes.csv,incorrect_claim_detected,binary integer,0 no; 1 yes,Identifies deliberately questionable claim.,none
+task_outcomes.csv,confidence_rating,integer,1–5,"Participant task confidence rating, not evaluator engagement.",none
+task_outcomes.csv,task_annoyance_rating,integer,1–5,Participant task annoyance rating; higher means more annoyance.,none
+task_outcomes.csv,confidence_calibration_error,number,nonnegative; observed 0.2–2.0,Recorded derived outcome; lower values indicate closer calibration.,none
+manuscript_survey_summary.csv,item,string,six survey items,Survey construct.,none
+manuscript_survey_summary.csv,Generic,number,mean on 1–5 scale,Generic mean printed in manuscript Figure 3.,none
+manuscript_survey_summary.csv,Personalized,number,mean on 1–5 scale,Personalized mean printed in manuscript Figure 3.,none
+manuscript_survey_summary.csv,p_holm_reported,string,<.001; .096; .005,Holm-adjusted paired Wilcoxon result at manuscript display precision.,none
+manuscript_preference_summary.csv,condition,category,normal_chatgpt; generic_extension; personalized_extension,Preferred interface condition.,none
+manuscript_preference_summary.csv,n,integer,0–35,"Number selecting the condition, as reported in the manuscript.",none
+manuscript_preference_summary.csv,percent_reported,number,percentage,Percentage at the manuscript display precision.,none

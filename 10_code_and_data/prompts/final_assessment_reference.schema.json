@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scoring_id",
+    "memory_explanation_score",
+    "memory_units",
+    "own_words_score",
+    "own_words_status",
+    "transfer_score",
+    "transfer_units",
+    "verification_needed_identified",
+    "verification_quality_score",
+    "incorrect_claim_detected",
+    "reasons",
+    "needs_review",
+    "review_reason"
+  ],
+  "properties": {
+    "scoring_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "memory_explanation_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "memory_units": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "own_words_score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 3
+    },
+    "own_words_status": {
+      "type": "string",
+      "enum": [
+        "scored",
+        "not_scorable"
+      ]
+    },
+    "transfer_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "transfer_units": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "verification_needed_identified": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "verification_quality_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2
+    },
+    "incorrect_claim_detected": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "reasons": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "memory_explanation_score",
+        "own_words_score",
+        "transfer_score",
+        "verification_needed_identified",
+        "verification_quality_score",
+        "incorrect_claim_detected"
+      ],
+      "properties": {
+        "memory_explanation_score": {
+          "type": "string",
+          "minLength": 1
+        },
+        "own_words_score": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transfer_score": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_needed_identified": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_quality_score": {
+          "type": "string",
+          "minLength": 1
+        },
+        "incorrect_claim_detected": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "needs_review": {
+      "type": "boolean"
+    },
+    "review_reason": {
+      "type": "string"
+    }
+  }
+}

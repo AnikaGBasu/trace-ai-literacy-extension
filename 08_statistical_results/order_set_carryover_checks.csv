@@ -1,0 +1,37 @@
+outcome,check,test,statistic,df_num,df_den,p_raw,formula,analysis_type,p_holm_exploratory_36
+memory_explanation_score,task_order,cluster-robust Wald F,0.480016062845,2,34,0.622903251583,memory_explanation_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+memory_explanation_score,task_set,cluster-robust Wald F,0.384753864935,2,34,0.683543844469,memory_explanation_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+memory_explanation_score,previous_condition,cluster-robust Wald F,0.304945350627,2,34,0.739158741514,memory_explanation_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+memory_explanation_score,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,2.95260606061,5,,0.707292589549,Personalized - Normal outcome by six condition sequences,exploratory,1
+own_words_score,task_order,cluster-robust Wald F,0.0208012347844,2,34,0.979426072734,own_words_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+own_words_score,task_set,cluster-robust Wald F,0.64312556801,2,34,0.531921736251,own_words_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+own_words_score,previous_condition,cluster-robust Wald F,0.435817252056,2,34,0.650298002151,own_words_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+own_words_score,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,1.18048484848,5,,0.946735822807,Personalized - Normal outcome by six condition sequences,exploratory,1
+transfer_score,task_order,cluster-robust Wald F,0.0987290117713,2,34,0.906246959203,transfer_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+transfer_score,task_set,cluster-robust Wald F,0.626658625042,2,34,0.540432890123,transfer_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+transfer_score,previous_condition,cluster-robust Wald F,0.279523062445,2,34,0.757865073442,transfer_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+transfer_score,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,1.71697022767,5,,0.886754901635,Personalized - Normal outcome by six condition sequences,exploratory,1
+verification_needed_identified,task_order,cluster-robust Wald F,0.177622480775,2,34,0.838030351274,verification_needed_identified ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+verification_needed_identified,task_set,cluster-robust Wald F,0.156349265846,2,34,0.855871808387,verification_needed_identified ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+verification_needed_identified,previous_condition,cluster-robust Wald F,0.232173802134,2,34,0.794054913619,verification_needed_identified ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+verification_needed_identified,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,1.72125902993,5,,0.886210673529,Personalized - Normal outcome by six condition sequences,exploratory,1
+verification_quality_score,task_order,cluster-robust Wald F,0.683170459577,2,34,0.511810740815,verification_quality_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+verification_quality_score,task_set,cluster-robust Wald F,0.701151080696,2,34,0.503044046217,verification_quality_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+verification_quality_score,previous_condition,cluster-robust Wald F,0.000178539408603,2,34,0.999821477466,verification_quality_score ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+verification_quality_score,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,2.53151655443,5,,0.771741315566,Personalized - Normal outcome by six condition sequences,exploratory,1
+incorrect_claim_detected,task_order,cluster-robust Wald F,0.0853804288463,2,34,0.918359146599,incorrect_claim_detected ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+incorrect_claim_detected,task_set,cluster-robust Wald F,0.113464274066,2,34,0.893072692096,incorrect_claim_detected ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+incorrect_claim_detected,previous_condition,cluster-robust Wald F,0.0117406478174,2,34,0.988332009695,incorrect_claim_detected ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+incorrect_claim_detected,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,4.1773993808,5,,0.524167900307,Personalized - Normal outcome by six condition sequences,exploratory,1
+confidence_calibration_error,task_order,cluster-robust Wald F,0.390854275705,2,34,0.679479082253,confidence_calibration_error ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+confidence_calibration_error,task_set,cluster-robust Wald F,0.211789037531,2,34,0.810194740114,confidence_calibration_error ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+confidence_calibration_error,previous_condition,cluster-robust Wald F,0.795237200747,2,34,0.459692461252,confidence_calibration_error ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+confidence_calibration_error,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,2.57094307562,5,,0.765775046134,Personalized - Normal outcome by six condition sequences,exploratory,1
+confidence_rating,task_order,cluster-robust Wald F,1.15669069111,2,34,0.326593731653,confidence_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+confidence_rating,task_set,cluster-robust Wald F,0.73450043543,2,34,0.487202328496,confidence_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+confidence_rating,previous_condition,cluster-robust Wald F,0.123926802614,2,34,0.883841718053,confidence_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+confidence_rating,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,2.20555555556,5,,0.820033099521,Personalized - Normal outcome by six condition sequences,exploratory,1
+task_annoyance_rating,task_order,cluster-robust Wald F,0.0372231406942,2,34,0.963500330359,task_annoyance_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+task_annoyance_rating,task_set,cluster-robust Wald F,0.836874052832,2,34,0.441787054427,task_annoyance_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set),exploratory,1
+task_annoyance_rating,previous_condition,cluster-robust Wald F,1.43486156098,2,34,0.252205000923,task_annoyance_rating ~ C(participant_id) + C(condition) + C(task_order) + C(task_set) + previous_generic + previous_personalized,exploratory,1
+task_annoyance_rating,sequence_heterogeneity_of_P_minus_N,Kruskal-Wallis,0.89167003367,5,,0.970821768484,Personalized - Normal outcome by six condition sequences,exploratory,1

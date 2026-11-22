@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_type",
+    "subject_area"
+  ],
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "explanation",
+        "factual_lookup",
+        "writing_generation",
+        "revision",
+        "problem_solving",
+        "coding_help",
+        "summarization",
+        "brainstorming",
+        "argumentation",
+        "translation",
+        "unknown"
+      ]
+    },
+    "subject_area": {
+      "type": "string",
+      "enum": [
+        "math",
+        "science",
+        "writing",
+        "coding",
+        "social_studies",
+        "language_learning",
+        "general"
+      ]
+    }
+  }
+}

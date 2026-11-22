@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Study information and participation choice</title>
+<style>body{font:18px/1.65 system-ui,sans-serif;color:#172435;background:#f3f6f8;margin:0}main{max-width:760px;margin:40px auto;background:white;padding:36px;border-radius:12px}h1{font-size:30px;line-height:1.2}h2{font-size:21px}button{font:inherit;padding:12px 18px;margin:8px 12px 8px 0;border-radius:6px;border:2px solid #087f8c;background:white;color:#17414a;cursor:pointer}button.primary{background:#087f8c;color:white}button:focus{outline:3px solid #d28b2d;outline-offset:3px}.note{background:#eef5f6;border-left:4px solid #087f8c;padding:14px}.status{font-weight:650}footer{font-size:14px;margin-top:25px}</style></head>
+<body><main>
+<p class="note">Reference consent form • version 1.0.0. This local template does not enroll participants.</p>
+<h1>AI interfaces and student learning</h1>
+<p>Please read this information before deciding whether to take part.</p>
+<h2>What will I do?</h2><p>You will complete a survey and practice activity, then use three AI interfaces to learn three topics. Each learning period provides seven minutes of active chat time. Some versions may show a brief reflection when you copy text. Afterwards, the chat and your notes will be hidden while you answer questions. At the end, you will give feedback.</p>
+<h2>What might feel uncomfortable?</h2><p>You may find questions difficult or reflection prompts slow or annoying. Some assessment claims are deliberately questionable and will be explained at the end. You do not need to describe private information.</p>
+<h2>Do I have to take part?</h2><p>No. You may decline, stop, skip optional survey items, or bypass an intervention. Your decision will not affect school grades or access to educational activities.</p>
+<h2>What information is used?</h2><p>The study records task answers, ratings, and interaction information under a study ID. The interface may send the task prompt, AI excerpt, selected excerpt, and reflection to a model service. Do not enter names, school names, contact details, or private information. The researcher will explain the study’s access, retention, withdrawal, sharing, and applicable consent/assent arrangements.</p>
+<h2>Who can I ask?</h2><p>Ask the researcher or use the study contact given in your invitation. Identifying contacts are omitted from this anonymous template.</p>
+<h2>Your choice</h2><p>By selecting the affirmative button, you indicate that you have read the information, have had an opportunity to ask questions, and voluntarily agree under the procedure explained to you. Neither choice is preselected.</p>
+<div id="choices"><button class="primary" data-decision="agree">I agree to participate</button><button data-decision="decline">I do not agree to participate</button></div>
+<p id="status" class="status" role="status" aria-live="polite"></p><button id="download" hidden>Download template decision record</button>
+<footer>No name, email, or school is collected by this template. Consent records are kept separately from outcome data.</footer>
+</main><script>
+'use strict';
+let record=null;
+document.querySelectorAll('[data-decision]').forEach(button=>button.addEventListener('click',()=>{
+ record={form_version:'consent-form-1.0.0',record_type:'template_preview',decision:button.dataset.decision,clicked_at_utc:new Date().toISOString()};
+ document.querySelectorAll('[data-decision]').forEach(b=>b.disabled=true);
+ document.getElementById('status').textContent=record.decision==='agree'?'You selected agree. This template does not start a study.':'You selected decline. No study will start.';
+ document.getElementById('download').hidden=false;
+}));
+document.getElementById('download').addEventListener('click',()=>{
+ if(!record)return;
+ const url=URL.createObjectURL(new Blob([JSON.stringify(record,null,2)],{type:'application/json'}));
+ const link=document.createElement('a');link.href=url;link.download='consent-template-record.json';link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+</script></body></html>

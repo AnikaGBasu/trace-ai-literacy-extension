@@ -1,0 +1,191 @@
+(function () {
+  const root = window.BeforeYouCopy || (window.BeforeYouCopy = {});
+
+  const INTERVENTIONS = {
+    active_recall: {
+      title: "Active Recall Check", 
+      cognitiveRisk: "passive comprehension", 
+      teach: "Mini-lesson: A polished AI answer can feel like understanding, but it is not the same as being able to explain it.\n\nScenario: Your friend pastes a summary and says, 'I get it.' The real test is whether they can say the main idea in plain English without looking back at the AI text.",
+      apply: "Quick check: In one sentence, explain the main idea in your own words and name one detail that matters.",
+      feedbackIfGood: "Good - you restated the idea in your own words. That means you are using AI as support, not as a replacement for understanding.",
+      takeaway: "Fluent AI output is not the same as your own understanding.", 
+      gentleQuestion: "Which responsible step fits this copy moment?", 
+      gentleOptions: [
+        "I can explain the main idea in my own words.",
+        "I need to reread before I use this.",
+        "I am only saving a small helpful phrase."
+      ],
+      followup: "Add one specific detail you understand in your own words.",
+      highExtra: "What part would be hardest to explain without looking back?"
+    },
+    verification: {
+      title: "Verification Check",
+      cognitiveRisk: "hallucination risk",
+      teach: "Mini-lesson: AI often sounds certain even when it is guessing. A good rule is: if a claim matters, check it.\n\nScenario: A response gives a fact, date, statistic, or source. Before you copy it, you should ask, 'What would I need to verify before I trust this?'",
+      apply: "Quick check: Name one claim in this response you would verify before using it, and say where you would check it.",
+      feedbackIfGood: "Good - you identified a specific claim to check. Fluent AI output is not the same as verified information.",
+      takeaway: "Trust AI less when the answer depends on facts, dates, sources, or statistics.",
+      gentleQuestion: "What should happen before using this factual claim?",
+      gentleOptions: [
+        "I should verify at least one specific claim.",
+        "I can trust it because it sounds confident.",
+        "I should check dates, sources, or statistics if they matter."
+      ],
+      followup: "Name one fact, date, source, or statistic you would check.",
+      highExtra: "Where would you look to verify that claim?"
+    },
+    authorship_reflection: {
+      title: "Authorship Reflection",
+      cognitiveRisk: "authorship loss",
+      teach: "Mini-lesson: AI can help you organize ideas, but the final piece should still sound like you. Good writing is not just accurate; it also reflects your choices, priorities, and voice.\n\nScenario: You have a draft and an AI rewrites it into a smoother version. The key question is not, 'Does it sound polished?' but, 'Does it still sound like me?'",
+      apply: "Quick check: What is one idea that is yours here, and what would you rewrite in your own voice so the final version still sounds like you?",
+      feedbackIfGood: "Nice - you separated your own thinking from the AI's phrasing.",
+      takeaway: "Use AI to support expression, not replace authorship.",
+      gentleQuestion: "Which choice best protects your authorship?",
+      gentleOptions: [
+        "I will rewrite AI wording in my own voice.",
+        "I will copy the AI wording as my final voice.",
+        "I can name which idea is mine before using this."
+      ],
+      followup: "Name one wording choice you would change so the work sounds like you.",
+      highExtra: "What part of this response should not become your final wording?"
+    },
+    revision_comparison: {
+      title: "Revision Comparison",
+      cognitiveRisk: "loss of voice",
+      teach: "Mini-lesson: AI revision can improve clarity, but it can also quietly change your meaning, tone, or argument. When you revise with AI, you are not accepting a sentence because it sounds better; you are deciding whether it still says what you mean.\n\nScenario: The model shortens your paragraph and makes it smoother. Before you accept it, you should ask what changed and whether you still agree with the result.",
+      apply: "Quick check: What changed in this revision—clarity, tone, structure, grammar, or argument—and what would you keep, reject, or revise?",
+      feedbackIfGood: "Good - you noticed what changed instead of accepting the revision automatically.",
+      takeaway: "AI revision is a suggestion, not a final authority.",
+      gentleQuestion: "What should you check before accepting an AI revision?",
+      gentleOptions: [
+        "Whether it changed my voice, tone, or meaning.",
+        "Whether it is longer than my original.",
+        "Whether I agree with the change."
+      ],
+      followup: "Name one change you would accept, reject, or revise again.",
+      highExtra: "What original meaning or voice do you want to preserve?"
+    },
+    step_reconstruction: {
+      title: "Step Reconstruction",
+      cognitiveRisk: "reasoning bypass",
+      teach: "Mini-lesson: A correct-looking answer is not always a learned answer. You learn when you can explain the reasoning behind each step, not just copy the final result.\n\nScenario: A model gives a neat solution. The key question is, 'Could I explain the first move and why it matters, even without the AI in front of me?'",
+      apply: "Quick check: What is the first key step in this solution, and why does it make sense to you?",
+      feedbackIfGood: "Good - you explained the reasoning behind the solution instead of only copying the answer.",
+      takeaway: "Do not use an AI solution unless you can explain how it works.",
+      gentleQuestion: "What makes copying a solution safer for learning?",
+      gentleOptions: [
+        "I can explain the first key step.",
+        "The answer looks polished.",
+        "I know why the step makes sense."
+      ],
+      followup: "Explain one step in the solution using your own words.",
+      highExtra: "What would you do next if this step were missing?"
+    },
+    error_explanation: {
+      title: "Code Understanding Check",
+      cognitiveRisk: "debugging bypass",
+      teach: "Mini-lesson: AI can fix code quickly, but speed is not the same as understanding. If you cannot explain the bug and the fix, you may be copying a patch you do not actually understand.\n\nScenario: A model suggests a new function or a tiny edit. Before using it, ask, 'What problem was it fixing, and why did that change work?'",
+      apply: "Quick check: What bug or issue did the AI identify, and how would you explain the fix in your own words?",
+      feedbackIfGood: "Good - you identified the bug and explained the fix.",
+      takeaway: "Copying code is risky if you cannot explain what changed.",
+      gentleQuestion: "What should you know before copying code?",
+      gentleOptions: [
+        "What changed and why it fixes the issue.",
+        "That the code is shorter.",
+        "Which bug or error the code addresses."
+      ],
+      followup: "Name one changed line, idea, or behavior and why it matters.",
+      highExtra: "How would you test that the fix actually works?"
+    },
+    main_idea_recall: {
+      title: "Main Idea Recall",
+      cognitiveRisk: "shallow synthesis",
+      teach: "Mini-lesson: AI summaries compress ideas. They can help you get the gist, but they can also hide important details or leave out the nuance that matters.\n\nScenario: A model gives a 2-sentence summary of a long reading. Before you rely on it, ask, 'What is the main idea, and what might be missing or exaggerated?'",
+      apply: "Quick check: State one main idea from this summary and one detail or nuance that might be missing before you rely on it.",
+      feedbackIfGood: "Good - you identified both the main idea and a possible limitation of the summary.",
+      takeaway: "AI summaries are compressed interpretations, not perfect replacements for the original.",
+      gentleQuestion: "What should you remember about AI summaries?",
+      gentleOptions: [
+        "They may leave out important details.",
+        "They replace the original perfectly.",
+        "I should know the main idea and a possible missing detail."
+      ],
+      followup: "Name one idea kept by the summary and one thing it might leave out.",
+      highExtra: "What source detail would you return to before relying on this?"
+    },
+    selection_rationale: {
+      title: "Selection Rationale",
+      cognitiveRisk: "passive idea acceptance",
+      teach: "Mini-lesson: AI can generate lots of ideas quickly, but the value comes from your judgment. Responsible use means choosing an idea because it fits your goal, not because it was the first or most polished option.\n\nScenario: The model presents three possible angles. Your job is to decide which one actually serves your purpose and why.",
+      apply: "Quick check: Which idea would you choose and why does it fit your goal better than the others?",
+      feedbackIfGood: "Good - you made a choice and explained your reasoning.",
+      takeaway: "Brainstorming with AI is most useful when you actively select and adapt ideas.",
+      gentleQuestion: "What is your role when AI brainstorms ideas?",
+      gentleOptions: [
+        "I choose and adapt ideas myself.",
+        "I accept the first idea automatically.",
+        "I can explain why one idea fits my purpose."
+      ],
+      followup: "Pick one idea and give a reason it fits your goal.",
+      highExtra: "How would you adapt the idea so it becomes more yours?"
+    },
+    counterargument: {
+      title: "Missing Perspective Check",
+      cognitiveRisk: "one-sided reasoning",
+      teach: "Mini-lesson: An answer can sound balanced and still miss the strongest opposing view. Good reasoning includes checking assumptions and looking for the perspective that might challenge the claim.\n\nScenario: A model gives a tidy argument. Before you copy it, ask, 'Who might disagree, and what would they say?'",
+      apply: "Quick check: What is one missing perspective, assumption, or counterargument in this response, and why does it matter?",
+      feedbackIfGood: "Good - you checked what the model may have left out.",
+      takeaway: "Strong AI-assisted reasoning includes looking for missing perspectives.",
+      gentleQuestion: "What makes AI-assisted argumentation stronger?",
+      gentleOptions: [
+        "Looking for a counterargument or missing perspective.",
+        "Using only the most confident-sounding side.",
+        "Checking the assumptions behind the response."
+      ],
+      followup: "Name one missing perspective, assumption, or counterargument.",
+      highExtra: "Who might disagree with this response, and why?"
+    },
+    meaning_grammar_check: {
+      title: "Meaning and Grammar Check",
+      cognitiveRisk: "language-learning bypass",
+      teach: "Mini-lesson: A translation can sound fluent while still masking a different tone, nuance, or grammar choice. Good language use is not just 'sounds natural'; it is 'means the same thing and preserves the right tone.'\n\nScenario: The AI translates a sentence into smooth English. Before you copy it, ask, 'What word choice or grammar structure could change the meaning?'",
+      apply: "Quick check: What is one word, phrase, or grammar choice in this translation that you need to understand before using it?",
+      feedbackIfGood: "Good - you identified a language choice to understand instead of copying the translation blindly.",
+      takeaway: "Use AI translation to learn language choices, not avoid them.",
+      gentleQuestion: "What should you notice before using an AI translation?",
+      gentleOptions: [
+        "A word, phrase, grammar choice, or tone choice.",
+        "Only whether it sounds fluent.",
+        "Whether I understand why the translation works."
+      ],
+      followup: "Name one word, phrase, grammar choice, or tone choice you should understand.",
+      highExtra: "What meaning could change if that choice is wrong?"
+    },
+    general_reflection: {
+      title: "Responsible Use Reflection",
+      cognitiveRisk: "general overreliance",
+      teach: "Mini-lesson: Generative AI can help you move faster, but it works best when you stay active in the process. Before you adopt an answer, pause and ask what you understand, what you question, and what you would change.\n\nScenario: An answer appears polished and complete. The responsible move is not to trust it instantly; it is to evaluate it before you use it.",
+      apply: "Quick check: Before copying, what is one thing you understand, one thing you question, or one change you would make to this output?",
+      feedbackIfGood: "Good - you paused to evaluate the AI output before using it.",
+      takeaway: "Responsible AI use means evaluating output before adopting it.",
+      gentleQuestion: "What is one responsible step before copying?",
+      gentleOptions: [
+        "I can name what I understand, question, or would change.",
+        "I can copy without thinking if it sounds fluent.",
+        "I can pause and evaluate the output first."
+      ],
+      followup: "Name one thing you understand, question, or would change.",
+      highExtra: "What would make this output more trustworthy or more yours?"
+    }
+  };
+
+  function getIntervention(family) {
+    return INTERVENTIONS[family] || INTERVENTIONS.general_reflection;
+  }
+
+  root.interventions = {
+    INTERVENTIONS,
+    getIntervention
+  };
+})();

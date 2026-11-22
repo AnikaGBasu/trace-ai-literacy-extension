@@ -1,0 +1,14 @@
+{
+  "seed": 20260907,
+  "bootstrap_replicates": 20000,
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "scipy": "1.15.3",
+  "statsmodels": "0.15.0",
+  "python": "3.10.11",
+  "input_sha256": {
+    "task_outcomes.csv": "8b1520ee48b5cd6f72dec9cce62e375227dfa06bd4e8c4491b5e499d917e2bcc",
+    "manuscript_survey_summary.csv": "2d1d25ec98412dc4f1bc26ac6d0eba4a24a07f435dd7b1c09cb753edd0dc71cc",
+    "manuscript_preference_summary.csv": "ef158287cd6f767b492848ddfdf41f4b6e1c2221314ab298715e31d06dcc726a"
+  }
+}

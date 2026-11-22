@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_type",
+    "subject_area",
+    "student_goal",
+    "cognitive_process"
+  ],
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "explanation",
+        "factual_lookup",
+        "writing_generation",
+        "revision",
+        "problem_solving",
+        "coding_help",
+        "summarization",
+        "brainstorming",
+        "argumentation",
+        "translation",
+        "unknown"
+      ]
+    },
+    "subject_area": {
+      "type": "string",
+      "enum": [
+        "math",
+        "science",
+        "writing",
+        "coding",
+        "social_studies",
+        "language_learning",
+        "general"
+      ]
+    },
+    "student_goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cognitive_process": {
+      "type": "string",
+      "enum": [
+        "comprehension",
+        "evidence_checking",
+        "authorship",
+        "comparison",
+        "step_tracking",
+        "debugging",
+        "synthesis",
+        "selection",
+        "argument_evaluation",
+        "language_analysis",
+        "responsible_use"
+      ]
+    }
+  }
+}

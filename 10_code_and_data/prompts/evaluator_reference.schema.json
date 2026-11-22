@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "response_score",
+    "response_label",
+    "reason",
+    "feedback",
+    "unlock_recommendation",
+    "additional_step_completed"
+  ],
+  "properties": {
+    "response_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2
+    },
+    "response_label": {
+      "type": "string",
+      "enum": [
+        "empty",
+        "partial",
+        "meaningful"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feedback": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unlock_recommendation": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "follow_up"
+      ]
+    },
+    "additional_step_completed": {
+      "type": "boolean"
+    }
+  }
+}

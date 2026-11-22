@@ -1,0 +1,17 @@
+{
+  "version": "generic-template-1.0.0",
+  "intervention_family": "general_reflection",
+  "title": "Pause before using this output",
+  "teach": "AI text can be useful. Before using it, briefly check what you understand and what needs checking.",
+  "apply": "In your own words, state the main idea you plan to use and name one claim or part you would check before relying on it.",
+  "feedbackIfGood": "You identified an idea and something to check. Use that reflection when deciding how to use the output.",
+  "takeaway": "Explain the idea and identify what needs checking before relying on it.",
+  "gentleQuestion": "What is one step you want to take before using this output?",
+  "gentleOptions": [
+    "Explain the main idea in my own words.",
+    "Identify something that needs checking.",
+    "Revise the output for my purpose."
+  ],
+  "followup": "Add the missing part: the main idea in your words, or one specific thing to check.",
+  "highExtra": "Describe how you would check the part you identified."
+}
